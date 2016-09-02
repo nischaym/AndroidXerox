@@ -28,11 +28,14 @@
                     url: url
                 }).
                 success(function(status) {
-
+		
+		            console.log(status);
                     $scope.skudata = status.Product[0];
                     console.log($scope.skudata);
                 }).
                 error(function(status) {
+			if (status == null)
+				alert("Got back Nothing...!! || im Being Blocked..!!");
                     console.log(status);
                 });
             }

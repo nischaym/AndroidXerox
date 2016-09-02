@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div>
+<input type="text" name ="sku">
+<button onClick="myFunc(document.getElementsByName('sku')[0].value)">search</button>
+</div>
+<div id="id01"></div>
+
+<script>
+function myFunc(sku) {
+console.log(sku);
+var xmlhttp = new XMLHttpRequest();
+var url = "http://api.staples.com/v1/10001/product/partnumber/"+sku+"/details?catalogId=10051&locale=en_US&zipCode=02139&client_id=ptdALhzG7NNM4lvsrGIAdSZhxjuwrGP2";
+
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        myFunction(myArr);
+    }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(arr) {
+    console.log(arr);
+    document.getElementById("id01").innerHTML = arr.Product[0].productName;
+}
+
+}
+
+
+</script>
+
+</body>
+</html>
+

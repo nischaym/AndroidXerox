@@ -11,6 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="ax.css" rel="stylesheet">
 
     <!-- Angular JS-->
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.js"></script>-->
@@ -25,9 +26,9 @@
     <div class="container-fluid">
             <!--side bar div-->
             <div>
-                <div ng-controller="HomeController">
-                    <div class="container">
-                        <h2>Search Here...!!</h2>
+                <div ng-controller="HomeController" class="container">
+                    <div >
+                        <h2 class="color-blue">Search Here...!!</h2>
 
                         <input type="text" class="form-control" ng-model="skuNumber">
                         <button ng-click="search(skuNumber)" type="button" class="btn btn-lg btn-default">search</button>
