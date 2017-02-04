@@ -1,1 +1,1 @@
-# AndroidXerox
+# Example to solve CORS issue
